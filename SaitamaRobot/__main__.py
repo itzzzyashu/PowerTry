@@ -53,14 +53,14 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
 Hi {}, my name is {}! 
 I'm a powerful group management bot,
-Specially made for Team【★𝘽𝙂★】
+Specially made for Team〖๖ۣۜƊH〗
 
 You can find my list of available commands with /help.
 """
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
-I'm Dr Stone & I help admins to manage their groups! Have a look at the following for an idea of some of \
+I'm Dark Hunter's Pvt Robot & I help admins to manage their groups! Have a look at the following for an idea of some of \
 the things I can help you with.
 
 *Main* commands available:
@@ -78,10 +78,10 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-SAITAMA_IMG = "https://telegra.ph/file/249aa4ea42022bc132002.jpg"
+SAITAMA_IMG = "https://telegra.ph/file/63ed7f32984c6d13d092b.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
-You can contact my master [BUDDY BOSS](https://t.me/BUDDYBOSS)for payment methods✔."""
+You can contact my master [BUDDY BOSS](https://t.me/BUDDYBOSS) for payment methods✔."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -209,16 +209,16 @@ def start(update: Update, context: CallbackContext):
                      [
                         InlineKeyboardButton(
                             text=" ♻️Help♻️",
-                            url="https://t.me/BG_ManagerBot?start=help"),
+                            url="https://t.me/DH_ManagerBot?start=help"),
                          InlineKeyboardButton(
-                            text=" 💥What's BG?💥 ",
-                             url="https://t.me/teambg99/208")        
+                            text=" 💥What's DH?💥 ",
+                             url="https://t.me/darkhunters/2")        
                        
                      ],
                      [
                         InlineKeyboardButton(
-                             text=" JOIN【★𝘽𝙂★】 ",
-                             url="https://t.me/divine_s_99")
+                             text=" JOIN〖๖ۣۜƊH〗 ",
+                             url="https://t.me/nileshbansal24")
                     
                     ]]))
     else:

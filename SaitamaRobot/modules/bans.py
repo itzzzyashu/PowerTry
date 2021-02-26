@@ -75,7 +75,7 @@ def ban(update: Update, context: CallbackContext) -> str:
             message.reply_text("Wolf abilities make them ban immune!")
             return log_message
         else:
-            message.reply_text("This user has immunity and cannot be banned.")
+            message.reply_text("Are you fool?I can't ban admins!")
             return log_message
 
     log = (

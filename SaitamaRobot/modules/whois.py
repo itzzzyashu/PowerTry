@@ -1,4 +1,19 @@
 from datetime import datetime
+import html
+import json
+import os
+import psutil
+import random
+import time
+import datetime
+from typing import Optional, List
+import re
+import requests
+from telegram.error import BadRequest
+from telegram import Message, Chat, Update, Bot, MessageEntity
+from telegram import ParseMode
+from telegram.ext import CommandHandler, run_async, Filters
+from telegram.utils.helpers import escape_markdown, mention_html
 
 from pyrogram import filters
 from pyrogram.types import User, Message
@@ -18,11 +33,11 @@ def ReplyCheck(message: Message):
     return reply_id
 
 infotext = (
-    "**[{full_name}](tg://user?id={user_id})**\n"
+    "**•[{full_name}](tg://user?id={user_id})**\n"
     " * UserID: `{user_id}`\n"
     " * First Name: `{first_name}`\n"
     " * Last Name: `{last_name}`\n"
-    " * Username: `{username}`\n"
+    " * Username: `@{username}`\n"
     " * Last Online: `{last_online}`\n"
     " * Bio: {bio}")
 
@@ -67,6 +82,10 @@ async def whois(client, message):
         except TypeError:
             mod_info = mod.__user_info__(user.id, chat.id)
         if mod_info:
+            text += "\n" + mod_info 
+        return
+        mod_info = mod.__user_info__(user.id, chat.id)
+        if mod_info:
             text += "\n" + mod_info
     try:
         profile = bot.get_user_profile_photos(user.id).photos[0][-1]
@@ -74,7 +93,7 @@ async def whois(client, message):
         bot.send_photo(chat.id, photo=profile, caption=(text), parse_mode=ParseMode.HTML, disable_web_page_preview=True)
     except IndexError:
         update.effective_message.reply_text(text, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
-        return
+
     desc = await client.get_chat(get_user)
     desc = desc.description
     await message.reply_text(

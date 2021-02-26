@@ -63,6 +63,17 @@ async def whois(client, message):
         user = await client.get_users(get_user)
     except PeerIdInvalid:
         await message.reply("I don't know that User.")
+        mod_info = mod.__user_info__(user.id)
+        except TypeError:
+            mod_info = mod.__user_info__(user.id, chat.id)
+        if mod_info:
+            text += "\n" + mod_info
+    try:
+        profile = bot.get_user_profile_photos(user.id).photos[0][-1]
+        bot.sendChatAction(chat.id, "upload_photo")
+        bot.send_photo(chat.id, photo=profile, caption=(text), parse_mode=ParseMode.HTML, disable_web_page_preview=True)
+    except IndexError:
+        update.effective_message.reply_text(text, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
         return
     desc = await client.get_chat(get_user)
     desc = desc.description

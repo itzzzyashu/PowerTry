@@ -204,21 +204,21 @@ def start(update: Update, context: CallbackContext):
                                 context.bot.username)),
                          InlineKeyboardButton(
                              text=" ⚡Creator⚡ ",
-                             url="https://t.me/BUDDYBOSS")
+                             url="https://t.me/theteambg")
                      ],
                      [
                         InlineKeyboardButton(
                             text=" ♻️Help♻️",
-                            url="https://t.me/DH_ManagerBot?start=help"),
+                            url="https://t.me/cheems_chkbot?start=help"),
                          InlineKeyboardButton(
-                            text=" 💥What's DH?💥 ",
-                             url="https://t.me/darkhunters/2")        
+                            text=" 💥What's BG?💥 ",
+                             url="https://t.me/teambg99")        
                        
                      ],
                      [
                         InlineKeyboardButton(
-                             text=" JOIN〖๖ۣۜƊH〗 ",
-                             url="https://t.me/nileshbansal24")
+                             text=" JOIN【★𝘽𝙂★】",
+                             url="https://t.me/divine_s_99")
                     
                     ]]))
     else:
